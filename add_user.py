@@ -3,17 +3,6 @@ import sqlite3
 conn = sqlite3.connect("database.db")
 cur = conn.cursor()
 
-# Vaccination table
-cur.execute("""
-CREATE TABLE IF NOT EXISTS vaccination (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    age INTEGER NOT NULL,
-    vaccine TEXT NOT NULL
-)
-""")
-
-# Users table
 cur.execute("""
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,7 +11,12 @@ CREATE TABLE IF NOT EXISTS users (
 )
 """)
 
+cur.execute(
+    "INSERT OR IGNORE INTO users (username, password) VALUES (?, ?)",
+    ("admin", "admin123")
+)
+
 conn.commit()
 conn.close()
 
-print("Database created successfully!")
+print("User created successfully!")s

@@ -37,6 +37,34 @@ def login():
 
     return render_template("login.html")
 
+@app.route("/register_page")
+def register_page():
+    return render_template("register.html")
+
+
+@app.route("/register", methods=["POST"])
+def register():
+
+    username = request.form["username"]
+    password = request.form["password"]
+
+    conn = sqlite3.connect("database.db")
+    cur = conn.cursor()
+
+    try:
+        cur.execute(
+            "INSERT INTO users(username, password) VALUES(?, ?)",
+            (username, password)
+        )
+        conn.commit()
+
+    except sqlite3.IntegrityError:
+        return "Username already exists!"
+
+    conn.close()
+
+    return redirect("/login")
+
 
 # ---------------- DASHBOARD ----------------
 @app.route("/dashboard")
