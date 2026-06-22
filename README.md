@@ -1,34 +1,43 @@
 # 💉 COVID Vaccination System (Flask + SQLite)
 
-A simple web-based vaccination management system built using Flask and SQLite.  
-It allows users to register, view, edit, and manage vaccination records.
+A web-based vaccination management system built using Flask and SQLite.
 
 ---
 
 ## 🚀 Features
-- User login system  
-- Add vaccination records  
-- View all records  
-- Edit / Update records  
-- Delete records  
-- Dashboard with stats  
+- Login system
+- Add vaccination records
+- View records
+- Edit/Delete records
+- Dashboard stats
 
 ---
 
 ## 🛠️ Tech Stack
-- Python  
-- Flask  
-- SQLite  
-- HTML, CSS (Jinja Templates)  
+- Python
+- Flask
+- SQLite
+- HTML (Jinja Templates)
 
 ---
 
 ## 📂 Project Structure
-📦 covid_vaccination/
-├── 📁 templates/
-│   ├── 🧾 index.html
-│   ├── 🔐 login.html
-│   ├── 📊 dashboard.html
-├── 🐍 view_data.py
-├── 🗄️ reset_db.py
+
+```plaintext
+covid_vaccination/
+├── templates/
+│   ├── index.html
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── view.html
+│   ├── edit.html
+│   ├── stats.html
+├── view_data.py
+├── reset_db.py
+├── database.db
 ```
+
+---
+
+## 👨‍💻 Author
+Vivek C
