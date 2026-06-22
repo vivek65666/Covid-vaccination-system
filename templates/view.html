@@ -22,12 +22,19 @@
     {% endwith %}
 
     <!-- SEARCH -->
-    <form method="GET" action="/search" class="mb-3">
-        <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search by name">
-            <button type="submit" class="btn btn-primary">Search</button>
-        </div>
+    <!-- SEARCH -->
+<div class="d-flex justify-content-between mb-3">
+
+    <a href="/add" class="btn btn-success">
+        + Add New Patient
+    </a>
+
+    <form method="GET" action="/search" class="d-flex">
+        <input type="text" name="q" class="form-control me-2" placeholder="Search by name">
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>
+
+</div>
 
     <table class="table table-bordered table-striped">
 
